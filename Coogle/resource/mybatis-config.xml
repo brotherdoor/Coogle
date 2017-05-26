@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="coogle.domain.User" alias="User"/>
+		<typeAlias type="coogle.domain.Accuse" alias="Accuse"/>
+		<typeAlias type="coogle.domain.Comment" alias="Comment"/>
+		<typeAlias type="coogle.domain.CookOrder" alias="CookOrder"/>
+		<typeAlias type="coogle.domain.Fridge" alias="Fridge"/>
+		<typeAlias type="coogle.domain.History" alias="History"/>
+		<typeAlias type="coogle.domain.Image" alias="Image"/>
+		<typeAlias type="coogle.domain.Ingredient" alias="Ingredient"/>
+		<typeAlias type="coogle.domain.Memo" alias="Memo"/>
+		<typeAlias type="coogle.domain.MyKitchen" alias="MyKitchen"/>
+		<typeAlias type="coogle.domain.Notice" alias="Notice"/>
+		<typeAlias type="coogle.domain.Post" alias="Post"/>
+		<typeAlias type="coogle.domain.Recipe" alias="Recipe"/>
+		<typeAlias type="coogle.domain.Warning" alias="Warning"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="scott" />
+				<property name="password" value="tiger" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mapper/AccuseMapper.xml" />
+		<mapper resource="mapper/PostMapper.xml" />
+		<mapper resource="mapper/RecipeMapper.xml" />
+		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/IngredientMapper.xml" />
+		<mapper resource="mapper/CookOrderMapper.xml" />
+	</mappers>
+</configuration>
