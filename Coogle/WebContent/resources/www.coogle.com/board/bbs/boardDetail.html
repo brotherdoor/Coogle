@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no">
+<meta name="naver-site-verification" content="5525bf08d4de4ec95ec484c5e24edd8e223c1efe"/>
+<meta property="og:type" content="website">
+<meta property="og:title" content="EYE 홈페이지 제작">
+<meta name="title" content="EYE 홈페이지 제작">
+<meta property="og:description" content="반응형홈페이지, 제작의뢰, 쇼핑몰홈페이지 쇼핑몰의뢰, 홈페이지의뢰, 홈페이지제작">
+<meta name="Description" CONTENT="반응형홈페이지, 개발의뢰, 쇼핑몰홈페이지, 쇼핑몰의뢰, 홈페이지의뢰, 홈페이지제작">
+<meta property="og:url" content="http://gbyeye.com">
+
+
+<title>coogle</title>
+<link rel="stylesheet" href="http://gbyeye.com/theme/eye/css/mobile.css">
+<link rel="stylesheet" href="http://gbyeye.com/theme/eye/mobile/skin/board/basicorder/style.css">
+<link href="../theme/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="canonical" href="../../main/main.html">
+<!--[if lte IE 8]>
+<script src="http://gbyeye.com/js/html5.js"></script>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "http://127.0.0.1:60646/www.coogle.com";
+var g5_bbs_url   = "http://127.0.0.1:60646/www.coogle.com/board/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "1";
+var g5_bo_table  = "ordermake";
+var g5_sca       = "";
+var g5_editor    = "smarteditor2";
+var g5_cookie_domain = "";
+</script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/jquery.menu.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/wrest.js"></script>
+<script src="../js/"></script>
+
+
+<script type="text/javascript">
+  WebFontConfig = {
+    custom: {
+        families: ['Nanum Gothic'],
+        urls: ['http://fonts.googleapis.com/earlyaccess/nanumgothic.css']
+    }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+ </script>
+
+
+</head>
+<body>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+<!--
+
+function autoSize(){
+	
+	var w_width = $(window).width();
+	//메뉴 반응형
+	if(w_width < 750){
+		$(".first_view").hide();
+		$(".second_view").hide();
+		$(".thirth_view").show();
+		$(".b_list_ck").hide();
+	}  else {
+		$(".first_view").show();
+		$(".second_view").hide();
+		$(".thirth_view").hide();
+		$(".b_list_ck").show();
+	}
+
+
+	if(w_width < 500){
+		var login_input_resize = w_width-60;
+		$("#mb_login").css('width','100%');
+		$("#mb_login .frm_input").css('width',login_input_resize+'px');
+	} else if(w_width > 500) { 
+		$("#mb_login").css('width','500px');
+		$("#mb_login").css('margin','auto');
+		$("#mb_login .frm_input").css('width','440px');
+	}
+
+	if(w_width < 500){
+		var pw_input_resize = w_width-50;
+		var pw_confirm_resize = w_width-40;
+		$("#pw_confirm").css('width',pw_confirm_resize+'px');
+		$("#pw_confirm .frm_input").css('width',pw_input_resize+'px');
+	} else if(w_width > 500) { 
+		$("#pw_confirm").css('width','500px');
+		$("#pw_confirm").css('margin','auto');
+		$("#pw_confirm .frm_input").css('width','490px');
+	}
+
+
+	if(w_width < 800){
+		var member_agree_resize = w_width-30;
+		$("#member_agree").css('width',member_agree_resize+'px');
+		
+	} else if(w_width > 800) { 
+		$("#member_agree").css('width','800px');
+		$("#member_agree").css('margin','auto');
+	}
+	if(w_width < 800){
+		var member_agree_resize = w_width-40;
+		$("#regi_form").css('width',member_agree_resize+'px');
+		$("#regi_form .frm_input").css('width',member_agree_resize-160+'px');
+	} else if(w_width > 800) { 
+		$("#regi_form").css('width','800px');
+		$("#regi_form").css('margin','auto');
+		$("#regi_form .frm_input").css('width','440px');
+	}
+
+
+
+	//company 소개
+	if(w_width < 1100){
+		$('#ctt_con').css('width','100%');
+		$('#eye_board_g').css('width','100%');
+		$('#eye_board_b').css('width','100%');
+		$('.eye_con_title').css('width','100%');
+		$("#eye_con_mobile").show();
+		$("#eye_con_pc").hide();
+	} else {
+		$('#ctt_con').css('width','100%');
+		$('#eye_board_g').css('width','100%');
+		$('#eye_board_b').css('width','1100px');
+		$('.eye_con_title').css('width','1100px');
+		$("#eye_con_mobile").hide();
+		$("#eye_con_pc").show();
+	}
+	//버튼 반응형
+	if(w_width < 510){
+		$(".eye_bt_nover").css("font-size","15px");
+		$(".eye_bt_nover").css("padding","5px 15px 5px 15px");
+		$(".eye_bt_nover").css("line-height","15px");
+
+		$(".eye_bt_over").css("font-size","15px");
+		$(".eye_bt_over").css("padding","5px 15px 5px 15px");
+		$(".eye_bt_over").css("line-height","15px");
+	} else {
+		$(".eye_bt_nover").css("font-size","20px");
+		$(".eye_bt_nover").css("padding","10px 30px 10px 30px");
+		$(".eye_bt_nover").css("line-height","30px");
+
+		$(".eye_bt_over").css("font-size","20px");
+		$(".eye_bt_over").css("padding","10px 30px 10px 30px");
+		$(".eye_bt_over").css("line-height","30px");
+	}
+
+	if(w_width > 420 && w_width < 750){
+		$(".eye_con_2").css("height","760px");
+
+		$(".eye_con_2 .eye_con2_li").css("width","100%");
+		$(".eye_con2_li li").css("width","49%");
+		$(".eye_con2_li li").css("margin-right","2%");
+		$(".eye_con2_li li:nth-child(2)").css("margin-right","0px");
+		$(".eye_con2_li li:last-child").css("margin-right","0px");
+		$("#eye_port_view1 li").css("width","50%");
+		$('.hover_').css("height",$(".hover_ img").height()+"px");
+		$('.eye_font_size_13').css("font-size","13px");
+		$(".eye_con2_li li:first-child .eye_font_size_13").css("line-height","200%");
+	} else if(w_width < 420) {
+		$(".eye_con_2").css("height","760px");
+		$(".eye_con_2 .eye_con2_li").css("width","100%");
+		$(".eye_con2_li li").css("width","49%");
+		$(".eye_con2_li li").css("margin-right","2%");
+		$(".eye_con2_li li:nth-child(2)").css("margin-right","0px");
+		$(".eye_con2_li li:last-child").css("margin-right","0px");
+		$("#eye_port_view1 li").css("width","100%");
+		$('.hover_').css("height",$(".hover_ img").height()+"px");
+		$('.eye_font_size_13').css("font-size","10px");
+		$(".eye_con2_li li:first-child .eye_font_size_13").css("font-size","12px");
+		$(".eye_con2_li li:first-child .eye_font_size_13").css("line-height","230%");
+
+		
+	} else {
+		$(".eye_con_2").css("height","440px");
+		$(".eye_con_2 .eye_con2_li").css("width","990px");
+		$(".eye_con2_li li").css("width","240px");
+		$(".eye_con2_li li").css("margin-right","10px");
+		$(".eye_con2_li li:last-child").css("margin-right","0");
+
+		$("#eye_port_view1 li").css("width","25%");
+		$('.hover_').css("height",$(".hover_ img").height()+"px");
+
+		$('.eye_font_size_13').css("font-size","13px");
+		$(".eye_con2_li li:first-child .eye_font_size_13").css("line-height","200%");
+	}
+
+}
+
+$(window).on('resize', function(){ 
+	autoSize();
+}); 
+
+
+$(window).scroll(function(){
+	var w_width = $(window).width();
+	if(w_width > 750){
+		if($(document).scrollTop() >= 100){
+			$( ".second_view" ).fadeIn( 'fast', function() {
+				$(".eye_scroll_menu").show();
+			});
+			
+		} else {
+			$( ".second_view" ).fadeOut( 'fast', function() {
+				$(".eye_scroll_menu").hide();
+			});
+		}
+	} else if(w_width < 750) {
+		if($(document).scrollTop() > 50){
+			$(".eye_scroll_menu2").css("position","fixed");
+		} else {
+			$(".eye_scroll_menu2").css("position","relative");
+		}
+	} else {
+	}
+});
+
+$(window).load(function(){
+	autoSize();
+	
+	$('.eye_bt_nover').hover(function(){
+		$(this).stop().animate({backgroundColor: '#9b0005','color': '#fff'}, 'fast');
+	}, function() {
+		$(this).stop().animate({backgroundColor: '#fff','color': '#000'}, 'fast');
+	});
+
+
+	$('.eye_bt_over').hover(function(){
+		$(this).stop().animate({backgroundColor: '#ffcc00','color': '#000'}, 'fast');
+	}, function() {
+		$(this).stop().animate({backgroundColor: '#9b0005','color': '#fff'}, 'fast');
+	});
+	 
+
+	$('.hover_').css("height",$(".hover_ img").height()+"px");
+	$('.hover_').hover(function(){
+		$(this).find("div").stop().animate({'height':$(this).find("img").height()+"px",'width':'100%'}, 'fast');
+		$(this).find("span").fadeIn( 'fast' );
+		$(this).find("a").fadeIn( 'fast' );
+
+	}, function() {
+		$(this).find("div").stop().animate({'height':'0','width':'0'}, 'fast');
+		$(this).find("span").fadeOut( 'fast' );
+		$(this).find("a").fadeOut( 'fast' );
+	});
+
+	$('.eye_scr_subject_bt2').hover(function(){
+		$(this).stop().animate({backgroundColor:"#fff",'color':'#000'}, 'fast');
+	}, function() {
+		$(this).stop().animate({backgroundColor:'transparent','color':'#fff'}, 'fast');
+	});
+
+	$('.eye_scr_subject_bt').hover(function(){
+		$(this).stop().animate({backgroundColor:"#fff",'color':'#000'}, 'fast');
+	}, function() {
+		$(this).stop().animate({backgroundColor:'transparent','color':'#fff'}, 'fast');
+	});
+
+
+	$('.eye_meue_bar').toggle(function() {
+		$(".eye_left_menu").stop().animate({'height':'170px'}, 'fast');
+
+		$(".eye_left_menu li").fadeIn( 'fast', function() {
+			$(".eye_left_menu li").show();
+		});
+		$("html").css({overflow:'hidden'}).bind('touchmove', function(e){e.preventDefault()});
+	}, function() {
+		$(".eye_left_menu").stop().animate({'height':'0px'}, 'fast');
+		$(".eye_left_menu li").fadeOut( 'fast', function() {
+			$(".eye_left_menu li").hide();
+		});
+		$("html").css({overflow:'scroll'});
+		$("html").unbind('touchmove');
+
+	});	
+});
+
+//-->
+</script>
+
+<header id="hd">
+	<div class="eye_logo first_view">
+		<a href="http://gbyeye.com"><img src="../../../img/%EB%A1%9C%EA%B3%A0.png" alt="Group By EYE"></a>
+	</div>
+	<div class="eye_menu first_view">
+			
+		
+				<a href="http://gbyeye.com/bbs/content.php?co_id=company" target="_self"><span class="eye_title ">레시피</span></a>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			
+		
+				<a href="http://gbyeye.com/bbs/content.php?co_id=service" target="_self"><span class="eye_title ">게시판</span></a>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			
+		
+				<a href="http://gbyeye.com/bbs/board.php?bo_table=homepage" target="_self"><span class="eye_title eye_select_y">셰프전당</span></a>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			
+		
+	</div>
+	
+
+</header>
+	
+<div id="wrapper">
+    <div id="container">
+<!-- skin : theme/basicorder --><div id="eye_board_b">
+<section id="bo_w">
+<table class="eye_con_4">
+<tr>
+	<td>
+	<ul>
+		<li>
+		<span class="eye_con_4_title eye_title_bg4">게시판 제목</span>
+		<p class="eye_title_line"></p>
+		</li>
+	</ul>
+	</td>
+</tr>
+<tr height="50">
+	<td>
+        
+    </td>
+</tr>
+</table>
+    <form name="fwrite" id="fwrite" action="http://gbyeye.com/bbs/write_update.php" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+    <input type="hidden" name="w" value="">
+    <input type="hidden" name="bo_table" value="ordermake">
+    <input type="hidden" name="wr_id" value="0">
+    <input type="hidden" name="sca" value="">
+    <input type="hidden" name="sfl" value="">
+    <input type="hidden" name="stx" value="">
+    <input type="hidden" name="spt" value="">
+    <input type="hidden" name="sst" value="">
+    <input type="hidden" name="sod" value="">
+    <input type="hidden" name="page" value="">
+    <input type="hidden" value="html1" name="html"><input type="hidden" name="secret" value="secret">    <div class="tbl_frm01 tbl_wrap">
+        <table>
+       
+        <tbody>
+       <tr>
+           <th scope="row">
+               <a href="user"><h5>글쓴이</h5></a><button name="button_accuse" href="shortcut.html">신고</button></th>
+        </tr>
+        <tr>
+            <th scope="row"><label for="wr_subject">제목<strong class="sound_only">필수</strong></label></th>
+            <td><input type="text" name="wr_subject" value="" id="wr_subject" required class="frm_input required"></td>
+        </tr>
+
+        <tr>
+            <th scope="row"><label for="wr_content">내용<strong class="sound_only">필수</strong></label></th>
+            <td class="wr_content">
+                              
+<script src="http://gbyeye.com/plugin/editor/smarteditor2/js/HuskyEZCreator.js"></script>
+<script>var g5_editor_url = "http://gbyeye.com/plugin/editor/smarteditor2", oEditors = [], ed_nonce = "936fb3c107";</script>
+<script src="http://gbyeye.com/plugin/editor/smarteditor2/config.js"></script>
+
+<textarea id="wr_content" name="wr_content" class="smarteditor2" maxlength="65536" style="width:100%;height:300px"></textarea>
+<span class="sound_only">웹 에디터 끝</span>                            </td>
+        </tr>
+        
+        </tbody>
+        </table>
+    </div>
+        
+        
+        <section class="sec_comment">
+					<h2>한줄댓글</h2>
+	<form class="box_write" id="new_comment" action="/recipes/4760/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="+tsO5kgO2sBHotb2l4QG72K1jxMKL2hE8jFN64n32c2+CYTPGSFqZmbkiAwHT6t3c4yYDCLSO8yDW8LJl8gBGw==">
+		<textarea placeholder="한 줄 댓글을 남겨주세요." name="comment[comment]" id="comment_comment"></textarea>
+		<button name="button" type="submit">댓글 등록</button>
+</form><ul class="list_comment">
+		<!-- [D] 등록된 댓글이 없는 경우 -->
+
+</ul>
+
+				</section>
+        
+    <div class="btn_confirm">
+        <a href="board.html" class="btn_cancel">뒤로</a>
+    </div>
+        
+    </form>
+</section>
+
+<script>
+
+    
+    
+    
+    
+function html_auto_br(obj)
+{
+    if (obj.checked) {
+        result = confirm("자동 줄바꿈을 하시겠습니까?\n\n자동 줄바꿈은 게시물 내용중 줄바뀐 곳을<br>태그로 변환하는 기능입니다.");
+        if (result)
+            obj.value = "html2";
+        else
+            obj.value = "html1";
+    }
+    else
+        obj.value = "";
+}
+
+function fwrite_submit(f)
+{
+    var wr_content_editor_data = oEditors.getById['wr_content'].getIR();
+oEditors.getById['wr_content'].exec('UPDATE_CONTENTS_FIELD', []);
+if(jQuery.inArray(document.getElementById('wr_content').value.toLowerCase().replace(/^\s*|\s*$/g, ''), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<div><br></div>','<p></p>','<br>','']) != -1){document.getElementById('wr_content').value='';}
+if (!wr_content_editor_data || jQuery.inArray(wr_content_editor_data.toLowerCase(), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<p></p>','<br>']) != -1) { alert("내용을 입력해 주십시오."); oEditors.getById['wr_content'].exec('FOCUS'); return false; }
+
+    var subject = "";
+    var content = "";
+    $.ajax({
+        url: g5_bbs_url+"/ajax.filter.php",
+        type: "POST",
+        data: {
+            "subject": f.wr_subject.value,
+            "content": f.wr_content.value
+        },
+        dataType: "json",
+        async: false,
+        cache: false,
+        success: function(data, textStatus) {
+            subject = data.subject;
+            content = data.content;
+        }
+    });
+
+    if (subject) {
+        alert("제목에 금지단어('"+subject+"')가 포함되어있습니다");
+        f.wr_subject.focus();
+        return false;
+    }
+
+    if (content) {
+        alert("내용에 금지단어('"+content+"')가 포함되어있습니다");
+        if (typeof(ed_wr_content) != "undefined")
+            ed_wr_content.returnFalse();
+        else
+            f.wr_content.focus();
+        return false;
+    }
+
+    if (document.getElementById("char_count")) {
+        if (char_min > 0 || char_max > 0) {
+            var cnt = parseInt(check_byte("wr_content", "char_count"));
+            if (char_min > 0 && char_min > cnt) {
+                alert("내용은 "+char_min+"글자 이상 쓰셔야 합니다.");
+                return false;
+            }
+            else if (char_max > 0 && char_max < cnt) {
+                alert("내용은 "+char_max+"글자 이하로 쓰셔야 합니다.");
+                return false;
+            }
+        }
+    }
+
+    if (!chk_captcha()) return false;
+
+    document.getElementById("btn_submit").disabled = "disabled";
+
+    return true;
+}
+</script>
+        
+        
+        
+        
+        
+</div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+
+$(function() {
+    // 폰트 리사이즈 쿠키있으면 실행
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+});
+</script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+</html>

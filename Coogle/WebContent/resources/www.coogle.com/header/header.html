@@ -1,0 +1,34 @@
+
+<div class="gnb">
+    <div class="gnb_top_wrap">
+        <div class="gnb_top">
+            <h1><a href="../main/main.html"><img src="../recipe.coogleEZmember.co.kr/static/image/headlogo.PNG" alt="로고" ></a></h1>
+            <div class="gnb_search">
+                <form id="frmTopRecipeSearch" method="get" action="/recipe/list.html">
+                    <div class="input-group">
+                        <input id="srhRecipeText" name="q" type="text" class="form-control" placeholder="" value="" style="ime-mode:active;"> <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" onClick="$('#frmTopRecipeSearch').submit();"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <ul class="gnb_right">
+                <li>
+                    <a id="memLayerBtn" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="마이페이지" data-original-title="마이페이지"><img src="http://recipe.ezmember.co.kr/img/df/pf_100_100.png"></a>
+                    <div class="mem_layer document_common_layer" style="display:none;left:-40px;">
+                        <p class="mem_layer_t"></p>
+                        <p class="mem_layer_m" style="text-align:left;"> <a href="/profile/index.html">MY홈</a> <a href="/profile/scrap.html">스크랩한 레시피</a> <a href="/profile/note.html">레시피 노트</a> <a href="/profile/alim.html">알림</a> <a href="/profile/message.html">메시지</a> <a href="/profile/qna.html">문의내역</a> <a href="/profile/order.html">주문조회</a> <a href="/shop/cart.html">장바구니</a> <a href="/user/check_login.html">회원정보수정</a> <a href="/user/logout.html">로그아웃</a> </p>
+                        <p class="mem_layer_b"></p>
+                    </div>
+                </li>
+                <li>
+                    <a id="btnTopWrite" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="레시피등록" data-original-title="레시피등록"><img src="http://recipe.ezmember.co.kr/img/tmn_write.png"></a>
+                    <div class="write_layer document_common_layer" style="display:none;left:-230px;">
+                        <a href="/inbox/insert.html" class="w_layer2"><img src="http://recipe.ezmember.co.kr/img/btn_write1.gif"><span>직접 등록하기</span></a>
+                        <a id="btnBlogForm" href="javascript:void(0)" class="w_layer3" data-toggle="modal" data-target="#divModalBlogForm"><img src="http://recipe.ezmember.co.kr/img/btn_write2.gif"><span>블로그 가져오기</span></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

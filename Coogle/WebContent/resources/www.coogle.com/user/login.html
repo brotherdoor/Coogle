@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if (IE 6)|(IE 7)|(IE 8)|(IE 9)]>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" class="old_ie">
+<![endif]-->
+<![if !IE]>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" class="">
+<![endif]>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta property="fb:pages" content="1567451316868458" />
+<meta name="description" content="5만건 이상의 레시피, 편리한 검색, 추천 레시피, 인기쿡방 레시피, 매주 이벤트">
+<meta name="keywords" content="">
+<title>Coogle</title>
+<meta property="kakao:title" content="Coogle" />
+<meta property="kakao:description" content="" />
+<link rel="stylesheet" type="text/css" href="http://recipe.ezmember.co.kr/static/css/bootstrap_20161214.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/font.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="http://recipe.ezmember.co.kr/static/css/ez_recipe_20170413.css" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://recipe1.ezmember.co.kr/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+<link href="http://recipe1.ezmember.co.kr/img/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+<link href="http://recipe1.ezmember.co.kr/img/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+<link href="http://recipe1.ezmember.co.kr/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+<link href="http://recipe1.ezmember.co.kr/img/icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+<link href="http://recipe1.ezmember.co.kr/img/icons/icon-hires.png" rel="icon" sizes="192x192" />
+<link href="http://recipe1.ezmember.co.kr/img/icons/icon-normal.png" rel="icon" sizes="128x128" />
+<script type="text/javascript" src="http://recipe.ezmember.co.kr/static/js/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="//static.criteo.net/js/ld/publishertag.js"></script>
+<script type="text/javascript">
+// Common Javascript
+var _WWW_URL_ = 'http://www.10000recipe.com';
+var _IMG_URL_ = 'http://recipe1.ezmember.co.kr';
+var _FILE_URL_ = 'http://recipe.ezmember.co.kr/cache';
+var _CURRENT_PAGE_ = 'http://www.coogle.com/user/login.html';
+var _USER_ID_ = '';
+</script>
+</head>
+<body><div class="nav_etc"><a href="../main/main.html"><img src="../../img/%EB%A1%9C%EA%B3%A0.png"></a></div>
+<script>
+
+$(function() {
+    $('#id_user').focus();
+    Kakao.init('f5e1efb59f821ea6ee4743d9eb859dee');
+});
+
+function doSubmit()
+{
+    if(!$('#id_user').val())
+    {
+        $('#idMsg').show();
+        $('#id_user').focus();
+        return false;
+    }
+    if(!$('#tx_passwd').val())
+    {
+        $('#pwMsg').show();
+        $('#tx_passwd').focus();
+        return false;
+    }
+    return true;
+}
+
+
+function loginWithKakao() {
+    Kakao.Auth.login({
+        persistAccessToken : false,
+        success: function(authObj) {
+            location.href="https://www.10000recipe.com/user/login_confirm.html?q_mode=kakao&kakao_token="+authObj.access_token+"&q_path="+encodeURIComponent('');
+        },
+        fail: function(err) {
+            console.log(JSON.parse(err));
+        }
+    });
+}
+
+function loginWithFacebook() {
+    FB.login(function(response) {
+        if (response.status === 'connected') {
+            location.href="https://www.10000recipe.com/user/login_confirm.html?q_mode=facebook&facebook_token="+response.authResponse.accessToken+"&q_path="+encodeURIComponent('');
+        } else if (response.status === 'not_authorized') {
+        } else {}
+    }, {scope: 'public_profile,email'});
+}
+
+window.fbAsyncInit = function() {
+    FB.init({
+        appId      : '436000339870193',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v2.1'
+    });
+};
+
+// Load the SDK asynchronously
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ko_KR/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+function loginWithNaver()
+{
+	location.href='https://nid.naver.com/oauth2.0/authorize?client_id=cWzmDRNgfouLxtetDws2&response_type=code&redirect_uri=https://www.10000recipe.com/user/login_confirm.html?q_mode=naver&state=9adc45fb4593b2d622881ce7da5bc319';
+}
+
+
+</script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.1.js"></script>
+<div class="container_etc" style="width:460px;">
+  <h2>Login</h2>
+  <div class="panel-body">
+    <form name="form_login" id="formLogin" method="post" action="https://www.10000recipe.com/user/login_confirm.html" autocomplete="off" onsubmit="return doSubmit()">
+    <input type="hidden" name="q_mode" value="check">
+    <input type="hidden" name="q_path" value="">
+      <div class="form-group">
+        <input type="text" name="id_user" class="form-control" id="id_user" placeholder="아이디">
+        <span id="idMsg" style="display:none;color:#FF0000;">아이디를 입력해주세요.</span>
+      </div>
+      <div class="form-group">
+        <input type="password" name="tx_passwd" class="form-control" id="tx_passwd" placeholder="비밀번호">
+        <span id="pwMsg" style="display:none;color:#FF0000;">비밀번호를 입력해주세요.</span>
+      </div>
+      <button type="submit" class="btn-primary btn-lg btn-block">로그인</button>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="login_perma" value="1"><span class="guide_txt">로그인 상태 유지</span>
+        </label>
+      </div>
+    </form>
+    <p class="help-block">개인정보 보호를 위해 개인 PC에서만 사용하세요.</p>
+    <div class="etc_line"></div>
+    <div class="join_btn">
+        <a href="insert.html">회원가입</a><span class="space_line">|</span>
+        <a href="find_passwd.html">비밀번호 찾기</a><span class="space_line">|</span>
+        <a href="find_id.html">아이디 찾기</a>
+    </div>
+    <button type="button" onClick="loginWithFacebook()" class="btn btn-primary btn-lg btn-block join_f"><span>페이스북으로 로그인</span></button>
+    <button type="button" onClick="loginWithKakao()" class="btn btn-primary btn-lg btn-block join_k"><span>카카오톡으로 로그인</span></button>
+    <button type="button" onClick="loginWithNaver()" class="btn btn-primary btn-lg btn-block join_n"><span>네이버로 로그인</span></button>
+  </div>
+</div>
+<script type="text/javascript" src="http://recipe.ezmember.co.kr/static/js/kakao.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://recipe.ezmember.co.kr/static/js/coreutil.min_20170112.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://recipe.ezmember.co.kr/static/js/ui.min_20150609.js" charset="utf-8"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-62003031-2', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
